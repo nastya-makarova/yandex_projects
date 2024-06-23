@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}
+  Лента записей
+{% endblock %}
+{% block content %}
+  <h1>Лента записей</h1>                        
+  <!-- Перебираем в цикле все посты -->
+  {% for post_id, post in posts_list.items reversed  %}
+    <hr>
+   {% include 'blog/includes/article.html' with show_link=True full_text=False %}
+  {% endfor %}
+{% endblock %}
